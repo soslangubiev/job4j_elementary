@@ -4,7 +4,6 @@ public class DummyBot {
     public static String answer(String question) {
         String answer = "Это ставит меня в тупик. Задайте другой вопрос.";
         if ("Привет, Бот.".equals(question)) {
-
             answer = "Привет, умник.";
         } else if ("Пока.".equals(question)) {
             answer = "До скорой встречи.";
