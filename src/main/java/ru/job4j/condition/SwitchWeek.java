@@ -3,24 +3,36 @@ package ru.job4j.condition;
 public class SwitchWeek {
 
     public static String nameOfDay(int day) {
-
+        String name;
         switch (day) {
             case 1:
-                return "Понедельник";
+                name = "Понедельник";
+                break;
             case 2:
-                return "Вторник";
+                name = "Вторник";
+                break;
             case 3:
-                return "Среда";
+                name = "Среда";
+                break;
             case 4:
-                return "Четверг";
+                name = "Четверг";
+                break;
             case 5:
-                return "Пятница";
+                name = "Пятница";
+                break;
             case 6:
-                return "Суббота";
+                name = "Суббота";
+                break;
             case 7:
-                return "Воскресенье";
+                name = "Воскресенье";
+                break;
             default:
-                return "Ошибка";
+                name = "Ошибка";
         }
+        return name;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(nameOfDay(8));
     }
 }
