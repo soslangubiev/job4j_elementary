@@ -30,4 +30,28 @@ public class MatrixCheckTest {
         boolean result = monoHorizontal(input, row);
         assertFalse(result);
     }
+
+    @Test
+    public void whenHasMonoVertical() {
+        char[][] input = {
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+        };
+        int column = 2;
+        boolean result = monoVertical(input, column);
+        assertTrue(result);
+    }
+
+    @Test
+    public void whenHasNotMonoVertical() {
+        char[][] input = {
+                {' ', ' ', ' '},
+                {'X', ' ', ' '},
+                {'X', ' ', ' '},
+        };
+        int column = 0;
+        boolean result = monoVertical(input, column);
+        assertFalse(result);
+    }
 }
