@@ -90,4 +90,56 @@ public class MatrixCheckTest {
         char[] expected = {'X', 'Y', 'Z'};
         assertArrayEquals(expected, result);
     }
+
+    @Test
+    public void whenDataMonoByVerticalThenTrue() {
+        char[][] input = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = isWin(input);
+        assertTrue(result);
+    }
+
+    @Test
+    public void whenDataNotMonoByVerticalThenFalse() {
+        char[][] input = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = isWin(input);
+        assertFalse(result);
+    }
+
+    @Test
+    public void whenDataHMonoByHorizontalThenTrue() {
+        char[][] input = {
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'X', 'X', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = isWin(input);
+        assertTrue(result);
+    }
+
+    @Test
+    public void whenDataNotMonoByHorizontalThenFalse() {
+        char[][] input = {
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'X', ' ', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = isWin(input);
+        assertFalse(result);
+    }
 }
